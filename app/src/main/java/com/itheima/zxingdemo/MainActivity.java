@@ -12,8 +12,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.zxing.WriterException;
 import com.google.zxing.activity.CaptureActivity;
 import com.google.zxing.common.BitmapUtils;
 
@@ -131,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     bitmap = BitmapUtils.create2DCode(content);//根据内容生成二维码
                     mTvResult.setVisibility(View.GONE);
                     mImage.setImageBitmap(bitmap);
-                } catch (WriterException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
                 break;
